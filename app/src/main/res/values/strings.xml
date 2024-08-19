@@ -17,4 +17,10 @@
     <string name="bottom_nav_account">Account</string>
     <string name="search_products_hint">Search for clothes</string>
     <string name="category_mens">Mens</string>
+    <string name="search_for_products">Search for clothing...</string>
+    <string name="app_name_store">Luxe Lounge</string>
+    <string name="menu_cart">Cart</string>
+    <string name="cart_description">Go to cart</string>
+    <string name="account_description">Go to user account</string>
+    <string name="menu_account">Account</string>
 </resources>

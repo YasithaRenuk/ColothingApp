@@ -5,7 +5,16 @@
     <item
         android:id="@+id/favorite"
         android:icon="@drawable/cart"
-        android:title="Cart"
-        android:contentDescription="cart"
+        android:title="@string/menu_cart"
+        android:iconTint="@color/lilac"
+        android:contentDescription="@string/cart_description"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/account"
+        android:title="@string/menu_account"        android:iconTint="@color/lilac"
+        android:contentDescription="@string/account_description"
+        app:showAsAction="ifRoom" />
+
 </menu>
