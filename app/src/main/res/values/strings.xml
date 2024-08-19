@@ -11,4 +11,10 @@
     <string name="shoes">shoes</string>
     <string name="casual_wear">casual wear</string>
     <string name="party_wear">party wear</string>
+    <string name="logo_description">The Cloth logo</string>
+    <string name="menu_search">Search</string>
+    <string name="bottom_nav_categories">Categories</string>
+    <string name="bottom_nav_account">Account</string>
+    <string name="search_products_hint">Search for clothes</string>
+    <string name="category_mens">Mens</string>
 </resources>
