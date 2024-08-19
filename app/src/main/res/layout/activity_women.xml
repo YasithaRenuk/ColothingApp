@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".secondPages.WomenActivity">
+
+    <Button
+        android:id="@+id/btcasual_wear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="139dp"
+        android:text="@string/casual_wear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btformal_wear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="55dp"
+        android:text="@string/formal_wear"
+        app:layout_constraintStart_toStartOf="@+id/btcasual_wear"
+        app:layout_constraintTop_toBottomOf="@+id/btcasual_wear" />
+
+    <Button
+        android:id="@+id/btparty_wear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="49dp"
+        android:text="@string/party_wear"
+        app:layout_constraintStart_toStartOf="@+id/btformal_wear"
+        app:layout_constraintTop_toBottomOf="@+id/btformal_wear" />
+</androidx.constraintlayout.widget.ConstraintLayout>

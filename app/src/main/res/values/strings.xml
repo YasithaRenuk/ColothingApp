@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Clothing App</string>
+    <string name="women">Women</string>
+    <string name="men">Men</string>
+    <string name="kids">Kids</string>
+    <string name="bags">bags</string>
+    <string name="watches">watches</string>
+    <string name="books">books</string>
+    <string name="formal_wear">formal wear</string>
+    <string name="sports_wear">sports wear</string>
+    <string name="shoes">shoes</string>
+    <string name="casual_wear">casual wear</string>
+    <string name="party_wear">party wear</string>
+</resources>

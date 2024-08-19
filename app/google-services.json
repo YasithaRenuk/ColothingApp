@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "126925537862",
+    "project_id": "clothing-jp",
+    "storage_bucket": "clothing-jp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:126925537862:android:3040afc87c9c4649c54047",
+        "android_client_info": {
+          "package_name": "com.firsttry.clothingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpB_Qa0ERDjRZLjk1wniPASEW9C79HUAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
