@@ -3,6 +3,7 @@ package com.firsttry.clothingapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,10 +14,12 @@ import androidx.core.view.WindowInsetsCompat;
 import com.firsttry.clothingapp.secondPages.KidsActivity;
 import com.firsttry.clothingapp.secondPages.MenActivity;
 import com.firsttry.clothingapp.secondPages.WomenActivity;
+import com.firsttry.clothingapp.util.GetItems;
+import com.google.firebase.Firebase;
 
 public class MainPageActivity extends AppCompatActivity {
 
-    Button btwoman,btmen,btkids;
+    LinearLayout btwoman,btmen,btkids;
     Intent intentwoman,intentmen,intentkids;
 
     @Override
