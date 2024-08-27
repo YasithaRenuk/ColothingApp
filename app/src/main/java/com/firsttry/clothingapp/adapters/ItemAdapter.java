@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,12 +35,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView tvTitle,tvPrice;
         public ImageView ivImg;
+        public ProgressBar progressBar;
 
         public ViewHolder(View view) {
             super(view);
             ivImg = view.findViewById(R.id.ivImg);
             tvTitle = view.findViewById(R.id.tvTitle);
             tvPrice = view.findViewById(R.id.tvPrice);
+            progressBar = view.findViewById(R.id.progressBar);
         }
     }
 
@@ -64,6 +67,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.tvTitle.setText(data.get(position).getName());
         holder.tvPrice.setText(data.get(position).getPrice());
+
+        holder.progressBar.setVisibility(View.VISIBLE);
+
         StorageReference gsReference = storageRef.getReferenceFromUrl(data.get(position).getImg());
         // Load the image into the ImageView using Glide
         gsReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -73,12 +79,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                 Glide.with(context)
                         .load(uri)
                         .into(holder.ivImg);
+                holder.progressBar.setVisibility(View.GONE);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
                 // Handle any errors
                 Log.w(TAG, "Error loading image", exception);
+                holder.progressBar.setVisibility(View.GONE);
             }
         });
 
