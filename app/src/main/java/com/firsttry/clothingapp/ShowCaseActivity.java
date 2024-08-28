@@ -65,7 +65,6 @@ public class ShowCaseActivity extends AppCompatActivity {
         GetItems getItems = new GetItems();
 
         progressBar.setVisibility(View.VISIBLE);
-        recyclerView.setVisibility(View.GONE);
 
         CompletableFuture<List<Item>> future = getItems.getData(category);
 
@@ -74,7 +73,6 @@ public class ShowCaseActivity extends AppCompatActivity {
             runOnUiThread(() -> {
                 adapter.setData(itemList);
                 progressBar.setVisibility(View.GONE);
-                recyclerView.setVisibility(View.VISIBLE);
             });
         }).exceptionally(throwable -> {
             Log.w(TAG, "Error getting documents.");

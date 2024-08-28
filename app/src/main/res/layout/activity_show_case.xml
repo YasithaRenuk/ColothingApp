@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="#1A1921"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ShowCaseActivity">
@@ -46,4 +45,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.14" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

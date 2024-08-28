@@ -6,8 +6,7 @@
     android:paddingLeft="47dp"
     android:paddingRight="47dp"
     android:paddingTop="47dp"
-    android:gravity="center_horizontal"
-    android:background="#1A1921"> <!-- Background color -->
+    android:gravity="center_horizontal">
 
     <!-- Logo Image -->
     <ImageView
