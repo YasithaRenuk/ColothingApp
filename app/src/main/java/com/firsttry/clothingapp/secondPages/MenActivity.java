@@ -2,7 +2,9 @@ package com.firsttry.clothingapp.secondPages;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +17,7 @@ import com.firsttry.clothingapp.ShowCaseActivity;
 
 public class MenActivity extends AppCompatActivity {
 
-    Button btFormal,btSports,btShoes;
+    ImageButton btFormal,btSports,btShoes;
     Intent intent;
 
 
@@ -52,4 +54,18 @@ public class MenActivity extends AppCompatActivity {
         });
 
     }
+
+    public void animateButton(View view) {
+        view.animate()
+                .scaleX(1.2f)
+                .scaleY(1.2f)
+                .alpha(0.5f)
+                .setDuration(100)
+                .withEndAction(() -> view.animate()
+                        .scaleX(1f)
+                        .scaleY(1f)
+                        .alpha(1f)
+                        .setDuration(100));
+    }
+
 }

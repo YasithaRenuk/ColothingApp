@@ -15,6 +15,7 @@
         android:layout_marginBottom="64dp"
         android:background="@null"
         android:src="@drawable/btn_getstarted"
+        android:onClick="animateButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.848"

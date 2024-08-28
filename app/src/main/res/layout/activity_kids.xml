@@ -7,33 +7,74 @@
     android:layout_height="match_parent"
     tools:context=".secondPages.KidsActivity">
 
-    <Button
+    <ImageButton
         android:id="@+id/btBags"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="139dp"
+        android:layout_marginTop="272dp"
+        android:background="@null"
+        android:src="@drawable/bags_cards"
         android:text="@string/bags"
+        android:onClick="animateButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btWatches"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="55dp"
-        android:text="@string/watches"
-        app:layout_constraintStart_toStartOf="@+id/btBags"
-        app:layout_constraintTop_toBottomOf="@+id/btBags" />
-
-    <Button
+    <ImageButton
         android:id="@+id/btBook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="32dp"
+        android:background="@null"
+        android:src="@drawable/book_card"
         android:text="@string/books"
-        app:layout_constraintStart_toStartOf="@+id/btWatches"
+        android:onClick="animateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btWatches" />
+
+    <ImageButton
+        android:id="@+id/btWatches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@null"
+        android:onClick="animateButton"
+        android:src="@drawable/watches_card"
+        android:text="@string/watches"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btBags" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kids_card" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="24sp"
+        android:textColor="@color/lilac"
+        android:text="@string/catogories"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="228dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/vline" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

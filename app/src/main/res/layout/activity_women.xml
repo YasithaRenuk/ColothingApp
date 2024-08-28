@@ -7,33 +7,74 @@
     android:layout_height="match_parent"
     tools:context=".secondPages.WomenActivity">
 
-    <Button
+    <ImageButton
         android:id="@+id/btcasual_wear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="139dp"
+        android:layout_marginTop="268dp"
+        android:background="?android:selectableItemBackground"
+        android:src="@drawable/woman_casual"
         android:text="@string/casual_wear"
+        android:onClick="animateButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btformal_wear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="32dp"
+        android:background="@null"
+        android:src="@drawable/woman_formal"
         android:text="@string/formal_wear"
-        app:layout_constraintStart_toStartOf="@+id/btcasual_wear"
+        android:onClick="animateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btcasual_wear" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btparty_wear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="32dp"
+        android:background="@null"
+        android:src="@drawable/woman_party"
         android:text="@string/party_wear"
-        app:layout_constraintStart_toStartOf="@+id/btformal_wear"
+        android:onClick="animateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btformal_wear" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/woman_card" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="24sp"
+        android:textColor="@color/lilac"
+        android:text="@string/catogories"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="228dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/vline" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

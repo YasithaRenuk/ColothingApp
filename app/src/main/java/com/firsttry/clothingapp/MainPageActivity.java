@@ -2,6 +2,7 @@ package com.firsttry.clothingapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
@@ -24,11 +25,6 @@ public class MainPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main_page);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
 
         btwoman = findViewById(R.id.btWomen);
         btmen = findViewById(R.id.btMen);
@@ -50,5 +46,17 @@ public class MainPageActivity extends AppCompatActivity {
             startActivity(intentkids);
         });
 
+    }
+    public void animateButton(View view) {
+        view.animate()
+                .scaleX(1.2f)
+                .scaleY(1.2f)
+                .alpha(0.5f)
+                .setDuration(100)
+                .withEndAction(() -> view.animate()
+                        .scaleX(1f)
+                        .scaleY(1f)
+                        .alpha(1f)
+                        .setDuration(100));
     }
 }

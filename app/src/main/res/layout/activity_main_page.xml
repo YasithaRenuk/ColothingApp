@@ -42,6 +42,7 @@
         android:layout_width="313dp"
         android:layout_height="158dp"
         android:layout_marginBottom="20dp"
+        android:onClick="animateButton"
         android:background="@null"
         android:src="@drawable/catcard_men" />
 
@@ -51,6 +52,7 @@
         android:layout_width="313dp"
         android:layout_height="158dp"
         android:src="@drawable/catcard_women"
+        android:onClick="animateButton"
         android:background="@null"
         android:layout_marginBottom="20dp" />
 
@@ -60,6 +62,7 @@
         android:layout_width="313dp"
         android:layout_height="158dp"
         android:src="@drawable/catcard_kids"
+        android:onClick="animateButton"
         android:background="@null" />
 
 </LinearLayout>
