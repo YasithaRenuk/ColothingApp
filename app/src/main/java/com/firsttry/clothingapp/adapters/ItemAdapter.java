@@ -33,7 +33,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     FirebaseStorage storageRef;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvTitle,tvPrice;
+        public TextView tvTitle,tvPrice,tvRating;
         public ImageView ivImg;
         public ProgressBar progressBar;
 
@@ -42,6 +42,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             ivImg = view.findViewById(R.id.ivImg);
             tvTitle = view.findViewById(R.id.tvTitle);
             tvPrice = view.findViewById(R.id.tvPrice);
+            tvRating = view.findViewById(R.id.tvRating);
             progressBar = view.findViewById(R.id.progressBar);
         }
     }
@@ -67,6 +68,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.tvTitle.setText(data.get(position).getName());
         holder.tvPrice.setText(data.get(position).getPrice());
+        holder.tvRating.setText(data.get(position).getRating());
 
         holder.progressBar.setVisibility(View.VISIBLE);
         holder.ivImg.setVisibility(View.GONE);

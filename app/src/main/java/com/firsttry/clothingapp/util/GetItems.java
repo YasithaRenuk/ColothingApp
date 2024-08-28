@@ -16,6 +16,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 public class GetItems {
@@ -38,16 +39,18 @@ public class GetItems {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Map<String, Object> itemMap = document.getData();
-                                String color, description, img, material, name, price;
+//                                System.out.println(itemMap);
+                                String color, description, img, material, name, price,rating;
 
-                                color = itemMap.get("Color").toString();
-                                description = itemMap.get("Description").toString();
-                                img = itemMap.get("Img").toString();
-                                material = itemMap.get("Material").toString();
-                                name = itemMap.get("Name").toString();
-                                price = itemMap.get("Price").toString();
+                                color = Objects.requireNonNull(itemMap.get("Color")).toString();
+                                description = Objects.requireNonNull(itemMap.get("Description")).toString();
+                                img = Objects.requireNonNull(itemMap.get("Img")).toString();
+                                material = Objects.requireNonNull(itemMap.get("Material")).toString();
+                                name = Objects.requireNonNull(itemMap.get("Name")).toString();
+                                price = Objects.requireNonNull(itemMap.get("Price")).toString();
+                                rating = Objects.requireNonNull(itemMap.get("Rating")).toString();
 
-                                data.add(new Item(color, description, img, material, name, price));
+                                data.add(new Item(color, description, img, material, name, price,rating));
                             }
                             future.complete(data);
                         } else {

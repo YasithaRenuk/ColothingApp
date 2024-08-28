@@ -1,16 +1,17 @@
 package com.firsttry.clothingapp.model;
 
 public class Item {
-    private String color,description,img,material,name,price;
+    private String color,description,img,material,name,price,rating;
     private  Boolean inStock;
 
-    public Item(String color, String description, String img, String material, String name, String price) {
+    public Item(String color, String description, String img, String material, String name, String price,String rating) {
         this.color = color;
         this.description = description;
         this.img = img;
         this.material = material;
         this.name = name;
         this.price = price;
+        this.rating = rating;
     }
 
     public String getColor() {
@@ -39,5 +40,9 @@ public class Item {
 
     public Boolean getInStock() {
         return inStock;
+    }
+
+    public String getRating() {
+        return rating;
     }
 }
