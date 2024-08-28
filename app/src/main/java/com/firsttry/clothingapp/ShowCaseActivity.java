@@ -5,6 +5,9 @@ import static android.content.ContentValues.TAG;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.GridLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -12,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,6 +31,7 @@ public class ShowCaseActivity extends AppCompatActivity {
     TextView tvTitle;
     String category;
     private ItemAdapter adapter;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +47,12 @@ public class ShowCaseActivity extends AppCompatActivity {
         adapter = new ItemAdapter(this);
         RecyclerView recyclerView = findViewById(R.id.rvItems);
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2, GridLayoutManager.VERTICAL,false);
+        recyclerView.setLayoutManager(gridLayoutManager);
 
         tvTitle = findViewById(R.id.tvTitle);
+        progressBar = findViewById(R.id.progressBar);
+
         Intent intent = getIntent();
         category = intent.getStringExtra("category");
 
@@ -56,15 +64,25 @@ public class ShowCaseActivity extends AppCompatActivity {
 
         GetItems getItems = new GetItems();
 
+        progressBar.setVisibility(View.VISIBLE);
+        recyclerView.setVisibility(View.GONE);
+
         CompletableFuture<List<Item>> future = getItems.getData(category);
 
         future.thenAccept(itemList -> {
-            adapter.setData(itemList);
+            // Hide ProgressBar and show RecyclerView once data is loaded
+            runOnUiThread(() -> {
+                adapter.setData(itemList);
+                progressBar.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
+            });
         }).exceptionally(throwable -> {
             Log.w(TAG, "Error getting documents.");
+            runOnUiThread(() -> {
+                progressBar.setVisibility(View.GONE);
+            });
             return null;
         });
-
 
     }
 }
