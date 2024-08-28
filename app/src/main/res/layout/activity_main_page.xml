@@ -5,12 +5,13 @@
     android:orientation="vertical"
     android:paddingLeft="47dp"
     android:paddingRight="47dp"
+    android:paddingTop="47dp"
     android:gravity="center_horizontal"
     android:background="#1A1921"> <!-- Background color -->
 
     <!-- Logo Image -->
     <ImageView
-        android:id="@+id/logoImage"
+        android:id="@+id/logo"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:src="@drawable/logo64x64"
@@ -38,28 +39,28 @@
 
     <!-- Button 1 -->
     <ImageButton
-        android:id="@+id/button1"
+        android:id="@+id/btMen"
         android:layout_width="313dp"
         android:layout_height="158dp"
         android:layout_marginBottom="20dp"
         android:background="@null"
-        android:src="@drawable/CatCard_Men" />
+        android:src="@drawable/catcard_men" />
 
     <!-- Button 2 -->
     <ImageButton
-        android:id="@+id/button2"
+        android:id="@+id/btWomen"
         android:layout_width="313dp"
         android:layout_height="158dp"
-        android:src="@drawable/CatCard_Women"
+        android:src="@drawable/catcard_women"
         android:background="@null"
         android:layout_marginBottom="20dp" />
 
     <!-- Button 3 -->
     <ImageButton
-        android:id="@+id/button3"
+        android:id="@+id/btKids"
         android:layout_width="313dp"
         android:layout_height="158dp"
-        android:src="@drawable/CatCard_Kids"
+        android:src="@drawable/catcard_kids"
         android:background="@null" />
 
 </LinearLayout>

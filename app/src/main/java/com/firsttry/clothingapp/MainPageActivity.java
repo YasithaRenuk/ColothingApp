@@ -2,8 +2,7 @@ package com.firsttry.clothingapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,12 +13,10 @@ import androidx.core.view.WindowInsetsCompat;
 import com.firsttry.clothingapp.secondPages.KidsActivity;
 import com.firsttry.clothingapp.secondPages.MenActivity;
 import com.firsttry.clothingapp.secondPages.WomenActivity;
-import com.firsttry.clothingapp.util.GetItems;
-import com.google.firebase.Firebase;
 
 public class MainPageActivity extends AppCompatActivity {
 
-    LinearLayout btwoman,btmen,btkids;
+    ImageButton btwoman,btmen,btkids;
     Intent intentwoman,intentmen,intentkids;
 
     @Override
@@ -27,11 +24,11 @@ public class MainPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main_page);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
 
         btwoman = findViewById(R.id.btWomen);
         btmen = findViewById(R.id.btMen);

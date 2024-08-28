@@ -59,7 +59,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.view_item, parent, false);
+                .inflate(R.layout.item_card, parent, false);
         return new ViewHolder(view);
     }
 
@@ -69,6 +69,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         holder.tvPrice.setText(data.get(position).getPrice());
 
         holder.progressBar.setVisibility(View.VISIBLE);
+        holder.ivImg.setVisibility(View.GONE);
 
         StorageReference gsReference = storageRef.getReferenceFromUrl(data.get(position).getImg());
         // Load the image into the ImageView using Glide
@@ -80,6 +81,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                         .load(uri)
                         .into(holder.ivImg);
                 holder.progressBar.setVisibility(View.GONE);
+                holder.ivImg.setVisibility(View.VISIBLE);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
