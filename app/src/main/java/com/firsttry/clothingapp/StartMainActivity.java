@@ -11,6 +11,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+//Y.R. Widanapathirana AS2021913
+//W.N.Thashenu Kularathna As2021983
+//R K C C Thilakarathne AS2021910
+//Nipun Samaranayaka AS2021923
+//M.G. Sanoj vishwajith Kumara AS2021901
+
 public class StartMainActivity extends AppCompatActivity {
 
     ImageButton BtnStart;

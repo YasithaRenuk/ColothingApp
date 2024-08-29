@@ -3,6 +3,7 @@ package com.firsttry.clothingapp.adapters;
 import static android.content.ContentValues.TAG;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.bumptech.glide.Glide;
+import com.firsttry.clothingapp.ProductViewActivity;
 import com.firsttry.clothingapp.R;
 import com.firsttry.clothingapp.model.Item;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -92,6 +94,16 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                 Log.w(TAG, "Error loading image", exception);
                 holder.progressBar.setVisibility(View.GONE);
             }
+        });
+
+        holder.ivImg.setOnClickListener((v)->{
+            Intent intent = new Intent(this.context, ProductViewActivity.class);
+            intent.putExtra("Name",data.get(position).getName());
+            intent.putExtra("Price",data.get(position).getPrice());
+            intent.putExtra("Rating",data.get(position).getRating());
+            intent.putExtra("Description",data.get(position).getDescription());
+            intent.putExtra("Img",data.get(position).getImg());
+            context.startActivity(intent);
         });
 
     }

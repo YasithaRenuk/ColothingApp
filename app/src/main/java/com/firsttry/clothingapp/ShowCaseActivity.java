@@ -60,7 +60,7 @@ public class ShowCaseActivity extends AppCompatActivity {
             finish();
         }
 
-        tvTitle.setText(category);
+        tvTitle.setText(category.replace("_"," ").toUpperCase());
 
         GetItems getItems = new GetItems();
 
